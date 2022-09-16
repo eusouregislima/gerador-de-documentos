@@ -71,7 +71,7 @@ const ContainerInfoFive = ({ onClick, ...props }) => {
           <ImageLine alt="line" src={Line} />
         </Flex>
       </div>
-      <Spacer margin="30px" />
+      <Spacer margin="10px" />
       <Flex>
         <Typography
           opacity="0.7"
@@ -105,7 +105,7 @@ const ContainerInfoFive = ({ onClick, ...props }) => {
           />
         </div>
       </Flex>
-      <Spacer margin="50px" />
+      <Spacer margin="20px" />
       <ContainerInput>
         <div>
           <Flex justify="left" paddingleft="20px">

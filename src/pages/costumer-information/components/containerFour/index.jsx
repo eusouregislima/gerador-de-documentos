@@ -95,7 +95,7 @@ const ContainerInfoFour = ({ ...props }) => {
           </Flex>
         </div>
       </ContainerInput>
-      <Spacer margin="240px" />
+      <Spacer margin="200px" />
 
       <Flex justify="right">
         <Button bgColor="#ACACAC" onClick={props.previousIndex}>

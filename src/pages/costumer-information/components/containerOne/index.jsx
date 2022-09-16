@@ -174,7 +174,7 @@ const ContainerInfoOne = ({ ...props }) => {
           </Flex>
         </div>
       </ContainerInput>
-      <Spacer margin="50px" />
+      <Spacer margin="15px" />
 
       <Flex justify="right">
         <Button onClick={props.nextIndex}>PRÓXIMO</Button>

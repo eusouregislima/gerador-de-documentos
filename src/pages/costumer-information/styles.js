@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Image = styled.img`
-  width: 150px;
+  width: 100px;
 
-  margin-top: 50px;
+  margin-top: 30px;
 
   @media screen and (max-width: 700px) {
     width: 50px;

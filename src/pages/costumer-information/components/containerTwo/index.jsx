@@ -173,7 +173,7 @@ const ContainerInfoTwo = ({ ...props }) => {
           </Flex>
         </div>
       </ContainerInput>
-      <Spacer margin="49px" />
+      <Spacer margin="10px" />
 
       <Flex justify="right">
         <Button bgColor="#ACACAC" onClick={props.previousIndex}>

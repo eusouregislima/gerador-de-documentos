@@ -194,7 +194,7 @@ const ContainerInfoThree = ({ ...props }) => {
           </Flex>
         </div>
       </ContainerInput>
-      <Spacer margin="107px" />
+      <Spacer margin="70px" />
       <Flex justify="right">
         <Button bgColor="#ACACAC" onClick={props.previousIndex}>
           VOLTAR

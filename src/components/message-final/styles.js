@@ -6,7 +6,7 @@ export const MessageFinal = styled.div`
   width: 522.02px;
   height: 618.07px;
   position: absolute;
-  top: 12%;
+  top: 7%;
   z-index: 2;
   padding: 20px;
   border: 0.5px solid black;
