@@ -49,6 +49,7 @@ const ContainerInfoTwo = ({ ...props }) => {
         <div>
           <Flex align="left" direction="column" gap="0px">
             <Input
+              autoFocus
               onChange={(value) => props?.handleYourName(value)}
               placeholder="Nome/Razão Social"
             />
@@ -64,7 +65,6 @@ const ContainerInfoTwo = ({ ...props }) => {
             <Input
               onChange={(value) => props?.handleYourCpf(value)}
               placeholder="CPF/CNPJ"
-              autoFocus
             />
             <ImageLine alt="line" src={Line} />
             <InputLabel>Digite um CPF ou um CNPJ válido!</InputLabel>
@@ -104,7 +104,6 @@ const ContainerInfoTwo = ({ ...props }) => {
           <Flex align="left" direction="column" gap="5px">
             <Input
               onChange={(value) => props?.handleYourCep(value)}
-              type="number"
               placeholder="CEP"
               width="13vw"
             />
@@ -177,8 +176,10 @@ const ContainerInfoTwo = ({ ...props }) => {
       <Spacer margin="49px" />
 
       <Flex justify="right">
-        <Button bgColor="#ACACAC">VOLTAR</Button>
-        <Button>PRÓXIMO</Button>
+        <Button bgColor="#ACACAC" onClick={props.previousIndex}>
+          VOLTAR
+        </Button>
+        <Button onClick={props.nextIndex}>PRÓXIMO</Button>
       </Flex>
     </ContainerInfo>
   );

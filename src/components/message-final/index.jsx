@@ -23,7 +23,7 @@ function MessageOfSucess({ onClick, ...props }) {
           lineHeight="38px"
         >
           Parabéns! 🚀 <br />
-          Você gerou o seu documento.
+          Você chegou ao final.
         </Typography>
         <Spacer margin="35px" />
         <Typography
@@ -33,7 +33,7 @@ function MessageOfSucess({ onClick, ...props }) {
           size="15px"
           lineHeight="23px"
         >
-          Obrigado por chegar ao fim dessa aplicação
+          Aplicação com finalidade demonstrativa.
         </Typography>
         <Spacer margin="40px" />
         <Flex>

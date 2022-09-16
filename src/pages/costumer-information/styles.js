@@ -1,47 +1,13 @@
 import styled from "styled-components";
 
-export const ContainerInfoOne = styled.div`
-  background-color: white;
-  width: 30%;
-  height: 100vh;
-  padding: 0px 25px;
-  display: ${(props) => (props.primary ? "25vw" : "none")};
-`;
-export const ContainerInfoTwo = styled.div`
-  background-color: white;
-  width: 30%;
-  height: 100vh;
-  padding: 0px 25px;
-  display: ${(props) => (props.primary ? "25vw" : "none")};
-`;
-export const ContainerInfoTree = styled.div`
-  background-color: white;
-  width: 30%;
-  height: 100vh;
-  padding: 0px 25px;
-  display: ${(props) => (props.primary ? "25vw" : "none")};
-`;
-
-export const ContainerInfoFour = styled.div`
-  background-color: white;
-  width: 30%;
-  height: 100vh;
-  padding: 0px 25px;
-  display: ${(props) => (props.primary ? "25vw" : "none")};
-`;
-
-export const ContainerInfoFive = styled.div`
-  background-color: white;
-  width: 30%;
-  height: 100vh;
-  padding: 0px 25px;
-  display: ${(props) => (props.primary ? "25vw" : "none")};
-`;
-
 export const Image = styled.img`
   width: 150px;
 
   margin-top: 50px;
+
+  @media screen and (max-width: 700px) {
+    width: 50px;
+  }
 `;
 
 export const CheckboxInput = styled.input`

@@ -59,7 +59,7 @@ const ContainerInfoThree = ({ ...props }) => {
         <div>
           <Flex justify="left" paddingleft="20px">
             <CheckboxInput
-              onClick={(value) => props?.handleServiceOne(value)}
+              onClick={() => props?.handleServiceOne()}
               type="checkbox"
             />
             <Typography
@@ -79,7 +79,7 @@ const ContainerInfoThree = ({ ...props }) => {
         <div>
           <Flex justify="left" paddingleft="20px">
             <CheckboxInput
-              onClick={(value) => props?.handleServiceTwo(value)}
+              onClick={() => props?.handleServiceTwo()}
               type="checkbox"
             />
             <Typography
@@ -99,7 +99,7 @@ const ContainerInfoThree = ({ ...props }) => {
         <div>
           <Flex justify="left" paddingleft="20px">
             <CheckboxInput
-              onClick={(value) => props?.handleServiceThree(value)}
+              onClick={() => props?.handleServiceThree()}
               type="checkbox"
             />
             <Typography
@@ -119,7 +119,7 @@ const ContainerInfoThree = ({ ...props }) => {
         <div>
           <Flex justify="left" paddingleft="20px">
             <CheckboxInput
-              onClick={(value) => props?.handleServiceFour(value)}
+              onClick={() => props?.handleServiceFour()}
               type="checkbox"
             />
             <Typography
@@ -139,7 +139,7 @@ const ContainerInfoThree = ({ ...props }) => {
         <div>
           <Flex justify="left" paddingleft="20px">
             <CheckboxInput
-              onClick={(value) => props?.handleServiceFive(value)}
+              onClick={() => props?.handleServiceFive()}
               type="checkbox"
             />
             <Typography
@@ -159,7 +159,7 @@ const ContainerInfoThree = ({ ...props }) => {
         <div>
           <Flex justify="left" paddingleft="20px">
             <CheckboxInput
-              onClick={(value) => props?.handleServiceSix(value)}
+              onClick={() => props?.handleServiceSix()}
               type="checkbox"
             />
             <Typography
@@ -179,7 +179,7 @@ const ContainerInfoThree = ({ ...props }) => {
         <div>
           <Flex justify="left" paddingleft="20px">
             <CheckboxInput
-              onClick={(value) => props?.handleServiceSeven(value)}
+              onClick={() => props?.handleServiceSeven()}
               type="checkbox"
             />
             <Typography
@@ -196,8 +196,10 @@ const ContainerInfoThree = ({ ...props }) => {
       </ContainerInput>
       <Spacer margin="107px" />
       <Flex justify="right">
-        <Button bgColor="#ACACAC">VOLTAR</Button>
-        <Button>PRÓXIMO</Button>
+        <Button bgColor="#ACACAC" onClick={props.previousIndex}>
+          VOLTAR
+        </Button>
+        <Button onClick={props.nextIndex}>PRÓXIMO</Button>
       </Flex>
     </ContainerInfo>
   );

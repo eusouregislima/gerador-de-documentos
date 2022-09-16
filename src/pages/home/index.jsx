@@ -21,6 +21,9 @@ export const Home = () => {
         <Typography fontWeight="400" size="40px" lineHeight="48px">
           🚀 Olá, Tudo bem contigo?
         </Typography>
+        <Typography fontWeight="400" size="20px" lineHeight="48px">
+          Aplicação adaptada somente para desktop
+        </Typography>
         <Spacer margin="10px" />
         <Flex paddingleft="150px" paddingright="150px">
           <Typography fontWeight="200" size="20px" lineHeight="23px">

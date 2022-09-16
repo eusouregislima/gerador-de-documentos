@@ -10,6 +10,8 @@ import ContainerInfoThree from "./components/containerThree";
 import ContainerInfoFour from "./components/containerFour";
 import ContainerInfoFive from "./components/containerFive";
 
+import { cepMask, cnpjMask } from "../../utils/mask";
+
 export const CostumerInformation = () => {
   const [costumerName, setCostumerName] = useState("");
   const [costumerCpf, setCostumerCpf] = useState("");
@@ -44,11 +46,7 @@ export const CostumerInformation = () => {
   const [initialDate, setInitialDate] = useState("");
   const [finalDate, setFinalDate] = useState("");
 
-  const [showContainerOne, setShowContainerOne] = useState();
-  const [showContainerTwo, setShowContainerTwo] = useState();
-  const [showContainerThree, setShowContainerThree] = useState();
-  const [showContainerFour, setShowContainerFour] = useState();
-  const [showContainerFive, setShowContainerFive] = useState();
+  const [index, setIndex] = useState(1);
 
   const history = useHistory();
 
@@ -57,7 +55,7 @@ export const CostumerInformation = () => {
   }
 
   const handleCostumerCpf = (value) => {
-    setCostumerCpf(value.target.value);
+    setCostumerCpf(cnpjMask(value.target.value));
   };
   const handleCostumerName = (value) => {
     setCostumerName(value.target.value);
@@ -82,7 +80,7 @@ export const CostumerInformation = () => {
   };
 
   const handleYourCpf = (value) => {
-    setYourCpf(value.target.value);
+    setYourCpf(cnpjMask(value.target.value));
   };
   const handleYourName = (value) => {
     setYourName(value.target.value);
@@ -164,51 +162,73 @@ export const CostumerInformation = () => {
     );
   };
 
+  const nextIndex = () => setIndex(index + 1);
+  const previousIndex = () => setIndex(index - 1);
+
   return (
     <Container>
       <Flex>
-        <ContainerInfoOne
-          handleCostumerCpf={(value) => handleCostumerCpf(value)}
-          handleCostumerName={(value) => handleCostumerName(value)}
-          handleCostumerAddress={(value) => handleCostumerAddress(value)}
-          handleCostumerNumber={(value) => handleCostumerNumber(value)}
-          handleCostumerCep={(value) => handleCostumerCep(value)}
-          handleCostumerDistrict={(value) => handleCostumerDistrict(value)}
-          handleCostumerCity={(value) => handleCostumerCity(value)}
-          handleCostumerUf={(value) => handleCostumerUf(value)}
-        />
+        {index === 1 && (
+          <ContainerInfoOne
+            nextIndex={nextIndex}
+            handleCostumerCpf={(value) => handleCostumerCpf(value)}
+            handleCostumerName={(value) => handleCostumerName(value)}
+            handleCostumerAddress={(value) => handleCostumerAddress(value)}
+            handleCostumerNumber={(value) => handleCostumerNumber(value)}
+            handleCostumerCep={(value) => handleCostumerCep(value)}
+            handleCostumerDistrict={(value) => handleCostumerDistrict(value)}
+            handleCostumerCity={(value) => handleCostumerCity(value)}
+            handleCostumerUf={(value) => handleCostumerUf(value)}
+          />
+        )}
 
-        <ContainerInfoTwo
-          handleYourCpf={(value) => handleYourCpf(value)}
-          handleYourName={(value) => handleYourName(value)}
-          handleYourAddress={(value) => handleYourAddress(value)}
-          handleYourNumber={(value) => handleYourNumber(value)}
-          handleYourCep={(value) => handleYourCep(value)}
-          handleYourDistrict={(value) => handleYourDistrict(value)}
-          handleYourCity={(value) => handleYourCity(value)}
-          handleYourUf={(value) => handleYourUf(value)}
-        />
+        {index === 2 && (
+          <ContainerInfoTwo
+            nextIndex={nextIndex}
+            previousIndex={previousIndex}
+            handleYourCpf={(value) => handleYourCpf(value)}
+            handleYourName={(value) => handleYourName(value)}
+            handleYourAddress={(value) => handleYourAddress(value)}
+            handleYourNumber={(value) => handleYourNumber(value)}
+            handleYourCep={(value) => handleYourCep(value)}
+            handleYourDistrict={(value) => handleYourDistrict(value)}
+            handleYourCity={(value) => handleYourCity(value)}
+            handleYourUf={(value) => handleYourUf(value)}
+          />
+        )}
 
-        <ContainerInfoThree
-          handleServiceOne={(value) => handleServiceOne(value)}
-          handleServiceTwo={(value) => handleServiceTwo(value)}
-          handleServiceThree={(value) => handleServiceThree(value)}
-          handleServiceFour={(value) => handleServiceFour(value)}
-          handleServiceFive={(value) => handleServiceFive(value)}
-          handleServiceSix={(value) => handleServiceSix(value)}
-          handleServiceSeven={(value) => handleServiceSeven(value)}
-        />
-        <ContainerInfoFour
-          handleObligationOne={(value) => handleObligationOne(value)}
-          handleObligationTwo={(value) => handleObligationTwo(value)}
-        />
+        {index === 3 && (
+          <ContainerInfoThree
+            nextIndex={nextIndex}
+            previousIndex={previousIndex}
+            handleServiceOne={(value) => handleServiceOne(value)}
+            handleServiceTwo={(value) => handleServiceTwo(value)}
+            handleServiceThree={(value) => handleServiceThree(value)}
+            handleServiceFour={(value) => handleServiceFour(value)}
+            handleServiceFive={(value) => handleServiceFive(value)}
+            handleServiceSix={(value) => handleServiceSix(value)}
+            handleServiceSeven={(value) => handleServiceSeven(value)}
+          />
+        )}
 
-        <ContainerInfoFive
-          handlePriceService={(value) => handlePriceService(value)}
-          handleInitialDate={(value) => handleInitialDate(value)}
-          handleFinalDate={(value) => handleFinalDate(value)}
-          navigateFinalPage={() => navigateFinalPage()}
-        />
+        {index === 4 && (
+          <ContainerInfoFour
+            nextIndex={nextIndex}
+            previousIndex={previousIndex}
+            handleObligationOne={(value) => handleObligationOne(value)}
+            handleObligationTwo={(value) => handleObligationTwo(value)}
+          />
+        )}
+
+        {index === 5 && (
+          <ContainerInfoFive
+            previousIndex={previousIndex}
+            handlePriceService={(value) => handlePriceService(value)}
+            handleInitialDate={(value) => handleInitialDate(value)}
+            handleFinalDate={(value) => handleFinalDate(value)}
+            navigateFinalPage={() => navigateFinalPage()}
+          />
+        )}
 
         <PagePaperSheet>
           <Flex direction="column">
@@ -225,7 +245,7 @@ export const CostumerInformation = () => {
             uppercase
           >
             <b>CONTRATANTE:</b> {costumerName}
-            <span>, CPF/CNPJ Nº</span> {costumerCpf}
+            <span>, CNPJ Nº</span> {costumerCpf}
             <span>, com sede em: </span>
             {costumerAddress}
             <span>, nº</span> {costumerNumber}
@@ -244,7 +264,7 @@ export const CostumerInformation = () => {
             uppercase
           >
             <b>CONTRATADA:</b> {yourName}
-            <span>, CPF/CNPJ Nº</span> {yourCpf}
+            <span>, CNPJ Nº</span> {yourCpf}
             <span>, com sede em: </span>
             {yourAddress}
             <span>, nº</span> {yourNumber}
@@ -300,7 +320,7 @@ export const CostumerInformation = () => {
           </Typography>
           <Spacer margin="20px" />
           <Typography fontWeight="300" margin="20px 50px" textAlign="left">
-            O valor cobrado pelos Serviços será de R${priceService}.
+            O valor cobrado pelos Serviços será de R$ {priceService}
             <Spacer />
             Esse documento é válido de {initialDate} até o dia {finalDate}
           </Typography>

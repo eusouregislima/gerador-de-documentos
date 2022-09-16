@@ -14,9 +14,9 @@ import Line from "../../../../assets/line.png";
 import Button from "../../../../components/Button";
 import ContainerInfo from "../../../../components/container";
 
-const ContainerInfoOne = ({ onclick, ...props }) => {
+const ContainerInfoOne = ({ ...props }) => {
   return (
-    <ContainerInfo primary>
+    <ContainerInfo>
       <Flex direction="column">
         <Image alt="logo-contrato-fácil" src={Logo} />
 
@@ -48,6 +48,7 @@ const ContainerInfoOne = ({ onclick, ...props }) => {
         <div>
           <Flex align="left" direction="column" gap="0px">
             <Input
+              autoFocus
               onChange={(value) => props?.handleCostumerName(value)}
               placeholder="Nome/Razão Social"
             />
@@ -62,7 +63,6 @@ const ContainerInfoOne = ({ onclick, ...props }) => {
           <Flex align="left" direction="column" gap="0px">
             <Input
               placeholder="CPF/CNPJ"
-              autoFocus
               onChange={(value) => props?.handleCostumerCpf(value)}
             />
             <ImageLine alt="line" src={Line} />
@@ -102,7 +102,6 @@ const ContainerInfoOne = ({ onclick, ...props }) => {
           <Flex align="left" direction="column" gap="5px">
             <Input
               onChange={(value) => props?.handleCostumerCep(value)}
-              type="number"
               placeholder="CEP"
               width="13vw"
             />
@@ -178,7 +177,7 @@ const ContainerInfoOne = ({ onclick, ...props }) => {
       <Spacer margin="50px" />
 
       <Flex justify="right">
-        <Button onclick={() => props?.tabContainerTwo()}>PRÓXIMO</Button>
+        <Button onClick={props.nextIndex}>PRÓXIMO</Button>
       </Flex>
     </ContainerInfo>
   );

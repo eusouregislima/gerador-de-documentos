@@ -18,7 +18,7 @@ import ContainerInfo from "../../../../components/container";
 
 const ContainerInfoFive = ({ onClick, ...props }) => {
   return (
-    <ContainerInfo>
+    <ContainerInfo primary>
       <Flex direction="column">
         <Image alt="logo-contrato-fácil" src={Logo} />
         <EvolutionBarFive
@@ -66,7 +66,6 @@ const ContainerInfoFive = ({ onClick, ...props }) => {
           <Input
             onChange={(value) => props?.handlePriceService(value)}
             aria-label="Valor dos Serviços"
-            type="number"
             placeholder="R$0,00"
           />
           <ImageLine alt="line" src={Line} />
@@ -145,7 +144,9 @@ const ContainerInfoFive = ({ onClick, ...props }) => {
       <Spacer margin="30px" />
 
       <Flex justify="right">
-        <Button bgColor="#ACACAC">VOLTAR</Button>
+        <Button bgColor="#ACACAC" onClick={props.previousIndex}>
+          VOLTAR
+        </Button>
         <Button onClick={() => props?.navigateFinalPage()}>FINALIZAR</Button>
       </Flex>
     </ContainerInfo>

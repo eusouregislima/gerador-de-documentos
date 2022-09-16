@@ -59,7 +59,7 @@ const ContainerInfoFour = ({ ...props }) => {
         <div>
           <Flex justify="left" paddingleft="20px">
             <CheckboxInput
-              onClick={(value) => props?.handleObligationOne(value)}
+              onClick={() => props?.handleObligationOne()}
               type="checkbox"
             />
             <Typography
@@ -80,7 +80,7 @@ const ContainerInfoFour = ({ ...props }) => {
         <div>
           <Flex justify="left" paddingleft="20px">
             <CheckboxInput
-              onClick={(value) => props?.handleObligationTwo(value)}
+              onClick={() => props?.handleObligationTwo()}
               type="checkbox"
             />
             <Typography
@@ -98,8 +98,10 @@ const ContainerInfoFour = ({ ...props }) => {
       <Spacer margin="240px" />
 
       <Flex justify="right">
-        <Button bgColor="#ACACAC">VOLTAR</Button>
-        <Button>PRÓXIMO</Button>
+        <Button bgColor="#ACACAC" onClick={props.previousIndex}>
+          VOLTAR
+        </Button>
+        <Button onClick={props.nextIndex}>PRÓXIMO</Button>
       </Flex>
     </ContainerInfo>
   );
